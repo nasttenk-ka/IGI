@@ -1,0 +1,176 @@
+[
+    {
+        "model": "pharmacy.category",
+        "pk": 1,
+        "fields": {
+            "name": "Обезболивающие",
+            "slug": "pain-relief"
+        }
+    },
+    {
+        "model": "pharmacy.category",
+        "pk": 2,
+        "fields": {
+            "name": "Витамины",
+            "slug": "vitamins"
+        }
+    },
+    {
+        "model": "pharmacy.category",
+        "pk": 3,
+        "fields": {
+            "name": "Противопростудные",
+            "slug": "cold-and-flu"
+        }
+    },
+    {
+        "model": "pharmacy.product",
+        "pk": 1,
+        "fields": {
+            "name": "Ибупрофен",
+            "slug": "ibuprofen",
+            "category": 1,
+            "description": "Противовоспалительное средство",
+            "price": "199.99",
+            "stock": 100,
+            "available": true,
+            "created_at": "2024-03-20T10:00:00Z",
+            "updated_at": "2024-03-20T10:00:00Z"
+        }
+    },
+    {
+        "model": "pharmacy.product",
+        "pk": 2,
+        "fields": {
+            "name": "Витамин C",
+            "slug": "vitamin-c",
+            "category": 2,
+            "description": "Поддержка иммунной системы",
+            "price": "299.99",
+            "stock": 150,
+            "available": true,
+            "created_at": "2024-03-20T10:00:00Z",
+            "updated_at": "2024-03-20T10:00:00Z"
+        }
+    },
+    {
+        "model": "pharmacy.product",
+        "pk": 3,
+        "fields": {
+            "name": "Парацетамол",
+            "slug": "paracetamol",
+            "category": 1,
+            "description": "Жаропонижающее средство",
+            "price": "149.99",
+            "stock": 200,
+            "available": true,
+            "created_at": "2024-03-20T10:00:00Z",
+            "updated_at": "2024-03-20T10:00:00Z"
+        }
+    },
+    {
+        "model": "pharmacy.product",
+        "pk": 4,
+        "fields": {
+            "name": "Мультивитамины",
+            "slug": "multivitamins",
+            "category": 2,
+            "description": "Комплекс витаминов и минералов",
+            "price": "499.99",
+            "stock": 80,
+            "available": true,
+            "created_at": "2024-03-20T10:00:00Z",
+            "updated_at": "2024-03-20T10:00:00Z"
+        }
+    },
+    {
+        "model": "pharmacy.product",
+        "pk": 5,
+        "fields": {
+            "name": "Терафлю",
+            "slug": "theraflu",
+            "category": 3,
+            "description": "Средство от простуды и гриппа",
+            "price": "399.99",
+            "stock": 120,
+            "available": true,
+            "created_at": "2024-03-20T10:00:00Z",
+            "updated_at": "2024-03-20T10:00:00Z"
+        }
+    },
+    {
+        "model": "pharmacy.product",
+        "pk": 6,
+        "fields": {
+            "name": "Аспирин",
+            "slug": "aspirin",
+            "category": 1,
+            "description": "Противовоспалительное и жаропонижающее средство",
+            "price": "179.99",
+            "stock": 150,
+            "available": true,
+            "created_at": "2024-03-20T10:00:00Z",
+            "updated_at": "2024-03-20T10:00:00Z"
+        }
+    },
+    {
+        "model": "pharmacy.product",
+        "pk": 7,
+        "fields": {
+            "name": "Витамин D3",
+            "slug": "vitamin-d3",
+            "category": 2,
+            "description": "Поддержка костной системы",
+            "price": "349.99",
+            "stock": 90,
+            "available": true,
+            "created_at": "2024-03-20T10:00:00Z",
+            "updated_at": "2024-03-20T10:00:00Z"
+        }
+    },
+    {
+        "model": "pharmacy.product",
+        "pk": 8,
+        "fields": {
+            "name": "Колдрекс",
+            "slug": "coldrex",
+            "category": 3,
+            "description": "Комплексное средство от простуды",
+            "price": "359.99",
+            "stock": 100,
+            "available": true,
+            "created_at": "2024-03-20T10:00:00Z",
+            "updated_at": "2024-03-20T10:00:00Z"
+        }
+    },
+    {
+        "model": "pharmacy.product",
+        "pk": 9,
+        "fields": {
+            "name": "Омега-3",
+            "slug": "omega-3",
+            "category": 2,
+            "description": "Рыбий жир в капсулах",
+            "price": "599.99",
+            "stock": 70,
+            "available": true,
+            "created_at": "2024-03-20T10:00:00Z",
+            "updated_at": "2024-03-20T10:00:00Z"
+        }
+    },
+    {
+        "model": "pharmacy.product",
+        "pk": 10,
+        "fields": {
+            "name": "Ринза",
+            "slug": "rinza",
+            "category": 3,
+            "description": "От насморка и простуды",
+            "price": "279.99",
+            "stock": 110,
+            "available": true,
+            "created_at": "2024-03-20T10:00:00Z",
+            "updated_at": "2024-03-20T10:00:00Z"
+        }
+    }
+] 

@@ -1,0 +1,41 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>Отчет о продажах</h1>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <h2>Общая выручка</h2>
+    </div>
+    <div class="card-body">
+        <p>Всего продаж: {{ total_revenue.count }}</p>
+        <p>Общая сумма: {{ total_revenue.total|default:0 }} ₽</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>Выручка по отделам</h2>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Отдел</th>
+                    <th>Количество продаж</th>
+                    <th>Сумма</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dept in by_department %}
+                <tr>
+                    <td>{{ dept.employee__department__name }}</td>
+                    <td>{{ dept.count }}</td>
+                    <td>{{ dept.total }} ₽</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

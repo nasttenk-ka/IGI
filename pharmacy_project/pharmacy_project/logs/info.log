@@ -1,0 +1,350 @@
+INFO 2025-05-27 08:25:28,635 views 8822 123145458876416 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 08:25:28,635 views 8822 123145458876416 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 08:25:38,954 views 8822 123145458876416 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 08:25:38,954 views 8822 123145458876416 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 08:25:39,666 models 8822 123145458876416 User updated: registrator1
+INFO 2025-05-27 08:25:39,666 views 8822 123145458876416 User registrator1 logged in successfully
+INFO 2025-05-27 08:25:39,666 views 8822 123145458876416 User registrator1 logged in successfully
+INFO 2025-05-27 08:51:15,409 views 8992 123145439895552 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 08:51:15,409 views 8992 123145439895552 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 08:51:25,091 views 8992 123145439895552 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 08:51:25,091 views 8992 123145439895552 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 08:51:25,813 models 8992 123145439895552 User updated: user_katya
+INFO 2025-05-27 08:51:25,813 views 8992 123145439895552 User user_katya logged in successfully
+INFO 2025-05-27 08:51:25,813 views 8992 123145439895552 User user_katya logged in successfully
+INFO 2025-05-27 08:51:52,482 views 8992 123145439895552 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 08:51:52,482 views 8992 123145439895552 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 08:51:58,213 views 8992 123145439895552 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 08:51:58,213 views 8992 123145439895552 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 08:51:58,928 models 8992 123145439895552 User updated: user_katya
+INFO 2025-05-27 08:51:58,928 views 8992 123145439895552 User user_katya logged in successfully
+INFO 2025-05-27 08:51:58,928 views 8992 123145439895552 User user_katya logged in successfully
+INFO 2025-05-27 09:15:00,634 models 9247 123145443561472 User updated: user_katya
+INFO 2025-05-27 11:30:21,928 views 9760 123145389416448 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 11:30:21,928 views 9760 123145389416448 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 11:30:32,451 views 9760 123145389416448 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 11:30:32,451 views 9760 123145389416448 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 11:30:33,168 models 9760 123145389416448 User updated: user_katya
+INFO 2025-05-27 11:30:33,168 views 9760 123145389416448 User user_katya logged in successfully
+INFO 2025-05-27 11:30:33,168 views 9760 123145389416448 User user_katya logged in successfully
+INFO 2025-05-27 11:36:23,504 models 9846 123145434050560 Created new Review with ID: 1
+ERROR 2025-05-27 11:37:08,679 views_api 9846 123145434050560 Error getting weather: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Minsk%2CBY&units=metric&lang=ru&appid=2b1119fdbcea84ad7218db53787eaa4b (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f207ed0>: Failed to resolve 'api.openweathermap.org' ([Errno 8] nodename nor servname provided, or not known)"))
+ERROR 2025-05-27 11:37:13,464 views_api 9846 123145434050560 Error getting weather: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Minsk%2CBY&units=metric&lang=ru&appid=2b1119fdbcea84ad7218db53787eaa4b (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10f130050>: Failed to resolve 'api.openweathermap.org' ([Errno 8] nodename nor servname provided, or not known)"))
+INFO 2025-05-27 11:37:33,734 views 9846 123145434050560 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 11:37:33,734 views 9846 123145434050560 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 11:37:39,248 views 9846 123145434050560 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 11:37:39,248 views 9846 123145434050560 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 11:37:39,960 models 9846 123145434050560 User updated: user_katya
+INFO 2025-05-27 11:37:39,960 views 9846 123145434050560 User user_katya logged in successfully
+INFO 2025-05-27 11:37:39,960 views 9846 123145434050560 User user_katya logged in successfully
+INFO 2025-05-27 11:38:27,805 views 9846 123145434050560 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 11:38:27,805 views 9846 123145434050560 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 11:38:35,340 views 9846 123145434050560 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 11:38:35,340 views 9846 123145434050560 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 11:38:36,057 models 9846 123145434050560 User updated: registrator1
+INFO 2025-05-27 11:38:36,057 views 9846 123145434050560 User registrator1 logged in successfully
+INFO 2025-05-27 11:38:36,057 views 9846 123145434050560 User registrator1 logged in successfully
+INFO 2025-05-27 12:01:27,700 views 9846 123145434050560 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:01:27,700 views 9846 123145434050560 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:01:33,853 views 9846 123145468166144 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:01:33,853 views 9846 123145468166144 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:01:34,577 models 9846 123145468166144 User updated: arina
+INFO 2025-05-27 12:01:34,577 views 9846 123145468166144 User arina logged in successfully
+INFO 2025-05-27 12:01:34,577 views 9846 123145468166144 User arina logged in successfully
+INFO 2025-05-27 12:06:12,741 views 9846 123145484955648 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:06:12,741 views 9846 123145484955648 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:06:19,441 views 9846 123145434050560 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:06:19,441 views 9846 123145434050560 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:06:20,174 models 9846 123145434050560 User updated: registrator1
+INFO 2025-05-27 12:06:20,174 views 9846 123145434050560 User registrator1 logged in successfully
+INFO 2025-05-27 12:06:20,174 views 9846 123145434050560 User registrator1 logged in successfully
+INFO 2025-05-27 12:09:51,917 views 9846 123145518534656 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:09:51,917 views 9846 123145518534656 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:09:56,151 views 9846 123145552113664 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:09:56,151 views 9846 123145552113664 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:09:56,876 models 9846 123145552113664 User updated: registrator1
+INFO 2025-05-27 12:09:56,876 views 9846 123145552113664 User registrator1 logged in successfully
+INFO 2025-05-27 12:09:56,876 views 9846 123145552113664 User registrator1 logged in successfully
+INFO 2025-05-27 12:13:49,845 models 9846 123145484955648 User updated: arina
+INFO 2025-05-27 12:16:02,748 models 9846 123145434050560 Created new CompanyHistory with ID: 1
+INFO 2025-05-27 12:41:50,767 views 9846 123145501745152 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:41:50,767 views 9846 123145501745152 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:41:57,294 views 9846 123145484955648 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:41:57,294 views 9846 123145484955648 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:41:58,017 models 9846 123145484955648 User updated: registrator1
+INFO 2025-05-27 12:41:58,017 views 9846 123145484955648 User registrator1 logged in successfully
+INFO 2025-05-27 12:41:58,017 views 9846 123145484955648 User registrator1 logged in successfully
+INFO 2025-05-27 12:55:30,687 views 10518 123145419526144 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:55:30,687 views 10518 123145419526144 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:55:36,284 views 10518 123145419526144 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:55:36,284 views 10518 123145419526144 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:55:37,000 models 10518 123145419526144 User updated: registrator1
+INFO 2025-05-27 12:55:37,000 views 10518 123145419526144 User registrator1 logged in successfully
+INFO 2025-05-27 12:55:37,000 views 10518 123145419526144 User registrator1 logged in successfully
+INFO 2025-05-27 12:56:25,649 views 10518 123145486684160 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:56:25,649 views 10518 123145486684160 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:56:34,472 views 10518 123145419526144 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:56:34,472 views 10518 123145419526144 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:56:35,182 models 10518 123145419526144 User updated: user_katya
+INFO 2025-05-27 12:56:35,182 views 10518 123145419526144 User user_katya logged in successfully
+INFO 2025-05-27 12:56:35,182 views 10518 123145419526144 User user_katya logged in successfully
+INFO 2025-05-27 12:57:30,034 views 10518 123145402200064 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:57:30,034 views 10518 123145402200064 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:57:37,217 views 10518 123145402200064 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:57:37,217 views 10518 123145402200064 Login attempt from IP: 127.0.0.1
+WARNING 2025-05-27 12:57:37,922 views 10518 123145402200064 Failed login attempt for username: user_liza
+WARNING 2025-05-27 12:57:37,922 views 10518 123145402200064 Failed login attempt for username: user_liza
+INFO 2025-05-27 12:57:41,004 views 10518 123145402200064 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:57:41,004 views 10518 123145402200064 Login attempt from IP: 127.0.0.1
+WARNING 2025-05-27 12:57:41,710 views 10518 123145402200064 Failed login attempt for username: user_liza
+WARNING 2025-05-27 12:57:41,710 views 10518 123145402200064 Failed login attempt for username: user_liza
+INFO 2025-05-27 12:58:20,374 views 10518 123145419526144 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:58:20,374 views 10518 123145419526144 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 12:58:21,084 models 10518 123145419526144 User updated: user_katya
+INFO 2025-05-27 12:58:21,084 views 10518 123145419526144 User user_katya logged in successfully
+INFO 2025-05-27 12:58:21,084 views 10518 123145419526144 User user_katya logged in successfully
+INFO 2025-05-27 13:17:33,395 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:17:33,395 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:17:36,407 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:17:36,407 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:17:37,123 models 10978 123145355784192 User updated: user_katya
+INFO 2025-05-27 13:17:37,123 views 10978 123145355784192 User user_katya logged in successfully
+INFO 2025-05-27 13:17:37,123 views 10978 123145355784192 User user_katya logged in successfully
+INFO 2025-05-27 13:18:15,485 models 10978 123145355784192 User updated: user_katya
+INFO 2025-05-27 13:19:03,476 models 10978 123145355784192 New order created: #5 by user_katya. Total: 0
+INFO 2025-05-27 13:19:03,476 models 10978 123145355784192 New order created: #5 by user_katya. Total: 0
+INFO 2025-05-27 13:19:03,484 models 10978 123145355784192 Order #5 updated. Status: Оформлен, Paid: False
+INFO 2025-05-27 13:19:03,484 models 10978 123145355784192 Order #5 updated. Status: Оформлен, Paid: False
+INFO 2025-05-27 13:19:07,078 models 10978 123145355784192 Stock updated for medication Нурофен (ID: 4): 80 -> 79
+INFO 2025-05-27 13:19:07,078 models 10978 123145355784192 Stock updated for medication Нурофен (ID: 4): 80 -> 79
+INFO 2025-05-27 13:19:07,081 models 10978 123145355784192 Stock updated for medication Линкас (ID: 5): 70 -> 68
+INFO 2025-05-27 13:19:07,081 models 10978 123145355784192 Stock updated for medication Линкас (ID: 5): 70 -> 68
+INFO 2025-05-27 13:19:07,083 models 10978 123145355784192 Stock updated for medication Эссенциале Форте (ID: 7): 30 -> 29
+INFO 2025-05-27 13:19:07,083 models 10978 123145355784192 Stock updated for medication Эссенциале Форте (ID: 7): 30 -> 29
+INFO 2025-05-27 13:19:07,085 models 10978 123145355784192 Order #5 updated. Status: Оформлен, Paid: True
+INFO 2025-05-27 13:19:07,085 models 10978 123145355784192 Order #5 updated. Status: Оформлен, Paid: True
+INFO 2025-05-27 13:19:07,086 models 10978 123145355784192 Order #5 marked as paid. Total amount: 57.60
+INFO 2025-05-27 13:19:07,086 models 10978 123145355784192 Order #5 marked as paid. Total amount: 57.60
+INFO 2025-05-27 13:19:07,088 models 10978 123145355784192 Sale record created for Order #5: Sale #4
+INFO 2025-05-27 13:19:07,088 models 10978 123145355784192 Sale record created for Order #5: Sale #4
+INFO 2025-05-27 13:19:18,590 views 10978 123145406689280 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:19:18,590 views 10978 123145406689280 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:19:30,235 views 10978 123145373110272 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:19:30,235 views 10978 123145373110272 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:19:30,950 models 10978 123145373110272 User updated: arina
+INFO 2025-05-27 13:19:30,950 views 10978 123145373110272 User arina logged in successfully
+INFO 2025-05-27 13:19:30,950 views 10978 123145373110272 User arina logged in successfully
+INFO 2025-05-27 13:21:44,893 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:21:44,893 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:21:53,456 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:21:53,456 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:21:54,159 models 10978 123145355784192 User updated: registrator1
+INFO 2025-05-27 13:21:54,159 views 10978 123145355784192 User registrator1 logged in successfully
+INFO 2025-05-27 13:21:54,159 views 10978 123145355784192 User registrator1 logged in successfully
+INFO 2025-05-27 13:22:51,897 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:22:51,897 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:23:01,038 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:23:01,038 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:23:01,740 models 10978 123145355784192 User updated: arina
+INFO 2025-05-27 13:23:01,740 views 10978 123145355784192 User arina logged in successfully
+INFO 2025-05-27 13:23:01,740 views 10978 123145355784192 User arina logged in successfully
+INFO 2025-05-27 13:26:02,419 models 10978 123145373110272 User updated: arina
+INFO 2025-05-27 13:28:17,350 models 10978 123145355784192 User updated: arina
+INFO 2025-05-27 13:29:18,097 models 10978 123145423478784 User updated: arina
+INFO 2025-05-27 13:29:28,498 models 10978 123145440268288 User updated: arina
+INFO 2025-05-27 13:31:16,706 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:31:16,706 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:31:23,592 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:31:23,592 views 10978 123145355784192 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:31:24,299 models 10978 123145355784192 User updated: arina
+INFO 2025-05-27 13:31:24,300 views 10978 123145355784192 User arina logged in successfully
+INFO 2025-05-27 13:31:24,300 views 10978 123145355784192 User arina logged in successfully
+INFO 2025-05-27 13:44:51,599 views 11332 123145613291520 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:44:51,599 views 11332 123145613291520 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:44:55,418 views 11332 123145546670080 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:44:55,418 views 11332 123145546670080 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 13:44:56,135 models 11332 123145546670080 User updated: arina
+INFO 2025-05-27 13:44:56,135 views 11332 123145546670080 User arina logged in successfully
+INFO 2025-05-27 13:44:56,135 views 11332 123145546670080 User arina logged in successfully
+INFO 2025-05-27 13:46:22,365 models 11332 123145579712512 User updated: registrator1
+INFO 2025-05-27 13:55:59,205 models 11447 123145426911232 Updated Employee with ID: 2
+INFO 2025-05-27 13:57:45,885 models 11447 123145443700736 Updated Employee with ID: 1
+INFO 2025-05-27 13:57:55,197 models 11447 123145443700736 Updated Employee with ID: 1
+INFO 2025-05-27 13:58:11,149 models 11447 123145460490240 Updated Employee with ID: 2
+INFO 2025-05-27 14:01:25,938 views 11447 123145426911232 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:01:25,938 views 11447 123145426911232 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:01:34,281 views 11447 123145426911232 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:01:34,281 views 11447 123145426911232 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:01:34,990 models 11447 123145426911232 User updated: registrator1
+INFO 2025-05-27 14:01:34,990 views 11447 123145426911232 User registrator1 logged in successfully
+INFO 2025-05-27 14:01:34,990 views 11447 123145426911232 User registrator1 logged in successfully
+INFO 2025-05-27 14:05:27,241 views 11612 123145553518592 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:05:27,241 views 11612 123145553518592 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:05:31,266 views 11612 123145553518592 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:05:31,266 views 11612 123145553518592 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:05:31,988 models 11612 123145553518592 User updated: registrator1
+INFO 2025-05-27 14:05:31,989 views 11612 123145553518592 User registrator1 logged in successfully
+INFO 2025-05-27 14:05:31,989 views 11612 123145553518592 User registrator1 logged in successfully
+INFO 2025-05-27 14:10:41,233 views 11644 123145372098560 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:10:41,233 views 11644 123145372098560 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:10:56,070 views 11644 123145355309056 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:10:56,070 views 11644 123145355309056 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:10:56,777 models 11644 123145355309056 User updated: arina
+INFO 2025-05-27 14:10:56,777 views 11644 123145355309056 User arina logged in successfully
+INFO 2025-05-27 14:10:56,777 views 11644 123145355309056 User arina logged in successfully
+INFO 2025-05-27 14:12:39,707 models 11644 123145337982976 Created new Vacancy with ID: 1
+INFO 2025-05-27 14:27:08,595 views 11855 123145454739456 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:27:08,595 views 11855 123145454739456 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:27:10,835 views 11855 123145454739456 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:27:10,835 views 11855 123145454739456 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:27:11,544 models 11855 123145454739456 User updated: arina
+INFO 2025-05-27 14:27:11,544 views 11855 123145454739456 User arina logged in successfully
+INFO 2025-05-27 14:27:11,544 views 11855 123145454739456 User arina logged in successfully
+INFO 2025-05-27 14:31:27,311 views 11855 123145437413376 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:31:27,311 views 11855 123145437413376 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:31:39,247 views 11855 123145437413376 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:31:39,247 views 11855 123145437413376 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:31:39,963 models 11855 123145437413376 User updated: arina
+INFO 2025-05-27 14:31:39,963 views 11855 123145437413376 User arina logged in successfully
+INFO 2025-05-27 14:31:39,963 views 11855 123145437413376 User arina logged in successfully
+INFO 2025-05-27 14:33:28,996 models 11855 123145454739456 Created new Supplier with ID: 5
+INFO 2025-05-27 14:33:40,598 models 11855 123145454739456 Updated Supplier with ID: 5
+INFO 2025-05-27 14:52:56,282 views 12248 123145585774592 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:52:56,282 views 12248 123145585774592 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:53:06,014 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:53:06,014 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:53:06,731 models 12248 123145518080000 User updated: user_katya
+INFO 2025-05-27 14:53:06,731 views 12248 123145518080000 User user_katya logged in successfully
+INFO 2025-05-27 14:53:06,731 views 12248 123145518080000 User user_katya logged in successfully
+INFO 2025-05-27 14:53:27,529 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:53:27,529 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:53:35,003 views 12248 123145552195584 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:53:35,003 views 12248 123145552195584 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:53:35,716 models 12248 123145552195584 User updated: arina
+INFO 2025-05-27 14:53:35,717 views 12248 123145552195584 User arina logged in successfully
+INFO 2025-05-27 14:53:35,717 views 12248 123145552195584 User arina logged in successfully
+INFO 2025-05-27 14:55:56,337 models 12248 123145534869504 Created new Vacancy with ID: 2
+INFO 2025-05-27 14:56:53,027 models 12248 123145568985088 Created new Vacancy with ID: 3
+INFO 2025-05-27 14:58:02,377 models 12248 123145568985088 User updated: user_liza
+INFO 2025-05-27 14:58:39,372 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:58:39,372 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:58:53,412 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 14:58:53,412 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+WARNING 2025-05-27 14:58:54,120 views 12248 123145518080000 Failed login attempt for username: user_liza
+WARNING 2025-05-27 14:58:54,120 views 12248 123145518080000 Failed login attempt for username: user_liza
+INFO 2025-05-27 15:00:52,233 views 12248 123145518080000 Registration attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:00:52,233 views 12248 123145518080000 Registration attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:00:52,237 models 12248 123145518080000 New user created: user_diana (Type: Customer)
+INFO 2025-05-27 15:00:52,238 views 12248 123145518080000 User registered successfully: user_diana
+INFO 2025-05-27 15:00:52,238 views 12248 123145518080000 User registered successfully: user_diana
+INFO 2025-05-27 15:00:52,242 models 12248 123145518080000 User updated: user_diana
+INFO 2025-05-27 15:01:11,178 models 12248 123145552195584 User updated: user_diana
+INFO 2025-05-27 15:01:33,419 models 12248 123145518080000 New order created: #6 by user_diana. Total: 0
+INFO 2025-05-27 15:01:33,419 models 12248 123145518080000 New order created: #6 by user_diana. Total: 0
+INFO 2025-05-27 15:01:33,428 models 12248 123145518080000 Order #6 updated. Status: Оформлен, Paid: False
+INFO 2025-05-27 15:01:33,428 models 12248 123145518080000 Order #6 updated. Status: Оформлен, Paid: False
+INFO 2025-05-27 15:01:35,158 models 12248 123145552195584 Stock updated for medication Парацетамол (ID: 1): 150 -> 149
+INFO 2025-05-27 15:01:35,158 models 12248 123145552195584 Stock updated for medication Парацетамол (ID: 1): 150 -> 149
+INFO 2025-05-27 15:01:35,162 models 12248 123145552195584 Stock updated for medication Амоксиклав (ID: 2): 50 -> 49
+INFO 2025-05-27 15:01:35,162 models 12248 123145552195584 Stock updated for medication Амоксиклав (ID: 2): 50 -> 49
+INFO 2025-05-27 15:01:35,165 models 12248 123145552195584 Stock updated for medication Витамин С (ID: 3): 117 -> 116
+INFO 2025-05-27 15:01:35,165 models 12248 123145552195584 Stock updated for medication Витамин С (ID: 3): 117 -> 116
+INFO 2025-05-27 15:01:35,168 models 12248 123145552195584 Stock updated for medication Валерьяна (ID: 8): 100 -> 99
+INFO 2025-05-27 15:01:35,168 models 12248 123145552195584 Stock updated for medication Валерьяна (ID: 8): 100 -> 99
+INFO 2025-05-27 15:01:35,170 models 12248 123145552195584 Order #6 updated. Status: Оформлен, Paid: True
+INFO 2025-05-27 15:01:35,170 models 12248 123145552195584 Order #6 updated. Status: Оформлен, Paid: True
+INFO 2025-05-27 15:01:35,171 models 12248 123145552195584 Order #6 marked as paid. Total amount: 28.72
+INFO 2025-05-27 15:01:35,171 models 12248 123145552195584 Order #6 marked as paid. Total amount: 28.72
+INFO 2025-05-27 15:01:35,173 models 12248 123145552195584 Sale record created for Order #6: Sale #5
+INFO 2025-05-27 15:01:35,173 models 12248 123145552195584 Sale record created for Order #6: Sale #5
+INFO 2025-05-27 15:03:13,957 views 12248 123145552195584 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:03:13,957 views 12248 123145552195584 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:03:20,146 views 12248 123145552195584 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:03:20,146 views 12248 123145552195584 Login attempt from IP: 127.0.0.1
+WARNING 2025-05-27 15:03:20,864 views 12248 123145552195584 Failed login attempt for username: user_liza
+WARNING 2025-05-27 15:03:20,864 views 12248 123145552195584 Failed login attempt for username: user_liza
+INFO 2025-05-27 15:03:43,064 views 12248 123145552195584 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:03:43,064 views 12248 123145552195584 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:03:43,780 models 12248 123145552195584 User updated: arina
+INFO 2025-05-27 15:03:43,780 views 12248 123145552195584 User arina logged in successfully
+INFO 2025-05-27 15:03:43,780 views 12248 123145552195584 User arina logged in successfully
+INFO 2025-05-27 15:04:12,006 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:04:12,006 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:04:20,158 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:04:20,158 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+WARNING 2025-05-27 15:04:20,866 views 12248 123145518080000 Failed login attempt for username: user_diana
+WARNING 2025-05-27 15:04:20,866 views 12248 123145518080000 Failed login attempt for username: user_diana
+INFO 2025-05-27 15:04:31,932 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:04:31,932 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:04:32,646 models 12248 123145518080000 User updated: arina
+INFO 2025-05-27 15:04:32,647 views 12248 123145518080000 User arina logged in successfully
+INFO 2025-05-27 15:04:32,647 views 12248 123145518080000 User arina logged in successfully
+INFO 2025-05-27 15:04:56,548 models 12248 123145518080000 User updated: user_diana
+INFO 2025-05-27 15:05:44,727 models 12248 123145518080000 Updated Review with ID: 1
+INFO 2025-05-27 15:06:01,359 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:06:01,359 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:06:11,450 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:06:11,450 views 12248 123145518080000 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:06:12,165 models 12248 123145518080000 User updated: user_katya
+INFO 2025-05-27 15:06:12,166 views 12248 123145518080000 User user_katya logged in successfully
+INFO 2025-05-27 15:06:12,166 views 12248 123145518080000 User user_katya logged in successfully
+INFO 2025-05-27 15:20:47,950 models 12248 123145585774592 New order created: #7 by user_katya. Total: 0
+INFO 2025-05-27 15:20:47,950 models 12248 123145585774592 New order created: #7 by user_katya. Total: 0
+INFO 2025-05-27 15:20:47,955 models 12248 123145585774592 Order #7 updated. Status: Оформлен, Paid: False
+INFO 2025-05-27 15:20:47,955 models 12248 123145585774592 Order #7 updated. Status: Оформлен, Paid: False
+INFO 2025-05-27 15:20:54,869 models 12248 123145552195584 Stock updated for medication АкваМарис (ID: 6): 75 -> 72
+INFO 2025-05-27 15:20:54,869 models 12248 123145552195584 Stock updated for medication АкваМарис (ID: 6): 75 -> 72
+INFO 2025-05-27 15:20:54,872 models 12248 123145552195584 Stock updated for medication Валерьяна (ID: 8): 99 -> 98
+INFO 2025-05-27 15:20:54,872 models 12248 123145552195584 Stock updated for medication Валерьяна (ID: 8): 99 -> 98
+INFO 2025-05-27 15:20:54,874 models 12248 123145552195584 Order #7 updated. Status: Оформлен, Paid: True
+INFO 2025-05-27 15:20:54,874 models 12248 123145552195584 Order #7 updated. Status: Оформлен, Paid: True
+INFO 2025-05-27 15:20:54,874 models 12248 123145552195584 Order #7 marked as paid. Total amount: 29.61
+INFO 2025-05-27 15:20:54,874 models 12248 123145552195584 Order #7 marked as paid. Total amount: 29.61
+INFO 2025-05-27 15:20:54,875 models 12248 123145552195584 Sale record created for Order #7: Sale #6
+INFO 2025-05-27 15:20:54,875 models 12248 123145552195584 Sale record created for Order #7: Sale #6
+INFO 2025-05-27 15:41:59,077 models 13305 123145352478720 Created new Review with ID: 2
+INFO 2025-05-27 15:42:07,489 models 13305 123145352478720 Updated Review with ID: 2
+INFO 2025-05-27 15:42:56,577 views 13305 123145403383808 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:42:56,577 views 13305 123145403383808 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:43:02,980 views 13305 123145420173312 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:43:02,980 views 13305 123145420173312 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:43:03,694 models 13305 123145420173312 User updated: arina
+INFO 2025-05-27 15:43:03,694 views 13305 123145420173312 User arina logged in successfully
+INFO 2025-05-27 15:43:03,694 views 13305 123145420173312 User arina logged in successfully
+INFO 2025-05-27 15:43:36,575 models 13305 123145369804800 Deleted Review with ID: 2
+INFO 2025-05-27 15:43:57,832 views 13305 123145403383808 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:43:57,832 views 13305 123145403383808 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:44:07,788 views 13305 123145420173312 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:44:07,788 views 13305 123145420173312 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:44:08,501 models 13305 123145420173312 User updated: user_katya
+INFO 2025-05-27 15:44:08,501 views 13305 123145420173312 User user_katya logged in successfully
+INFO 2025-05-27 15:44:08,501 views 13305 123145420173312 User user_katya logged in successfully
+INFO 2025-05-27 15:44:20,646 models 13305 123145369804800 Created new Review with ID: 3
+INFO 2025-05-27 15:44:36,465 views 13305 123145386594304 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:44:36,465 views 13305 123145386594304 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:44:44,265 views 13305 123145369804800 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:44:44,265 views 13305 123145369804800 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:44:44,982 models 13305 123145369804800 User updated: arina
+INFO 2025-05-27 15:44:44,982 views 13305 123145369804800 User arina logged in successfully
+INFO 2025-05-27 15:44:44,982 views 13305 123145369804800 User arina logged in successfully
+INFO 2025-05-27 15:44:56,414 models 13305 123145369804800 Deleted Review with ID: 3
+INFO 2025-05-27 15:45:11,614 views 13305 123145369804800 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:45:11,614 views 13305 123145369804800 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:45:20,736 views 13305 123145420173312 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:45:20,736 views 13305 123145420173312 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:45:21,453 models 13305 123145420173312 User updated: user_katya
+INFO 2025-05-27 15:45:21,453 views 13305 123145420173312 User user_katya logged in successfully
+INFO 2025-05-27 15:45:21,453 views 13305 123145420173312 User user_katya logged in successfully
+INFO 2025-05-27 15:50:39,259 models 13305 123145352478720 Created new Review with ID: 4
+INFO 2025-05-27 15:50:50,512 models 13305 123145352478720 Updated Review with ID: 4
+INFO 2025-05-27 15:51:00,565 views 13305 123145352478720 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:51:00,565 views 13305 123145352478720 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:51:06,804 views 13305 123145352478720 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:51:06,804 views 13305 123145352478720 Login attempt from IP: 127.0.0.1
+INFO 2025-05-27 15:51:07,520 models 13305 123145352478720 User updated: arina
+INFO 2025-05-27 15:51:07,520 views 13305 123145352478720 User arina logged in successfully
+INFO 2025-05-27 15:51:07,520 views 13305 123145352478720 User arina logged in successfully
+INFO 2025-05-27 15:52:05,110 models 13305 123145352478720 Updated Supplier with ID: 1
+INFO 2025-05-27 15:52:10,877 models 13305 123145352478720 Updated Supplier with ID: 1
+INFO 2025-06-05 01:48:09,953 views 32704 27388 Login attempt from IP: 127.0.0.1
+INFO 2025-06-05 01:48:09,953 views 32704 27388 Login attempt from IP: 127.0.0.1

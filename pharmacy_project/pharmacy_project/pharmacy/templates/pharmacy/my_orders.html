@@ -1,0 +1,33 @@
+{% extends 'pharmacy/base.html' %}
+
+{% block title %}Мои заказы{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Мои заказы</h2>
+    
+    {% if orders %}
+        <div class="row">
+            {% for order in orders %}
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Заказ #{{ order.id }}</h5>
+                        <p class="card-text">
+                            <strong>Дата:</strong> {{ order.order_date|date:"d.m.Y H:i" }}<br>
+                            <strong>Статус:</strong> {{ order.get_status_display }}<br>
+                            <strong>Сумма:</strong> {{ order.total_price }} руб.
+                        </p>
+                        <a href="{% url 'pharmacy:order_detail' pk=order.id %}" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">
+            У вас пока нет заказов. <a href="{% url 'pharmacy:create_order' %}">Оформить заказ</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %} 

@@ -1,0 +1,64 @@
+{% extends 'pharmacy/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Поставщики</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Всего поставщиков</h5>
+                    <h3>{{ total_suppliers }}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-success text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Всего препаратов</h5>
+                    <h3>{{ total_medications }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="mb-0">Список поставщиков</h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Название</th>
+                            <th>Контактное лицо</th>
+                            <th>Телефон</th>
+                            <th>Email</th>
+                            <th>Кол-во препаратов</th>
+                            <th>Общий запас</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for supplier in suppliers %}
+                        <tr>
+                            <td>{{ supplier.name }}</td>
+                            <td>{{ supplier.contact_person }}</td>
+                            <td>{{ supplier.phone }}</td>
+                            <td>{{ supplier.email }}</td>
+                            <td>{{ supplier.total_medications }}</td>
+                            <td>{{ supplier.total_stock }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="6" class="text-center">Поставщики не найдены</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

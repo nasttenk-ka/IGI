@@ -1,0 +1,99 @@
+{% extends "pharmacy/base.html" %}
+
+{% block title %}Контакты - Аптека "Здоровье"{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="text-center mb-4">Наша команда</h1>
+            <p class="text-center lead">Познакомьтесь с профессионалами, которые заботятся о вашем здоровье</p>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for employee in employees %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 employee-card">
+                <div class="card-header text-center bg-white border-bottom-0 pt-4">
+                    {% if employee.photo %}
+                        <img src="{{ employee.photo.url }}" alt="{{ employee.name }}" class="rounded-circle employee-photo mb-3">
+                    {% else %}
+                        <img src="/static/images/default-avatar.png" alt="{{ employee.name }}" class="rounded-circle employee-photo mb-3">
+                    {% endif %}
+                    <h5 class="card-title mb-1">{{ employee.name }}</h5>
+                    <p class="text-muted mb-0">{{ employee.position }}</p>
+                </div>
+                <div class="card-body">
+                    <div class="employee-info">
+                        <p class="mb-2"><strong>Отдел:</strong> {{ employee.department }}</p>
+                        <p class="mb-2"><strong>Специализация:</strong> {{ employee.specialization }}</p>
+                        <p class="mb-3">{{ employee.description }}</p>
+                    </div>
+                    <div class="contact-info">
+                        <p class="mb-2">
+                            <i class="fas fa-phone-alt text-primary me-2"></i>
+                            <a href="tel:{{ employee.phone }}" class="text-decoration-none">{{ employee.phone }}</a>
+                        </p>
+                        <p class="mb-0">
+                            <i class="fas fa-envelope text-primary me-2"></i>
+                            <a href="mailto:{{ employee.email }}" class="text-decoration-none">{{ employee.email }}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+                <i class="fas fa-info-circle me-2"></i>
+                Информация о сотрудниках скоро будет добавлена
+            </div>
+        </div>
+        {% endfor %}
+</div>
+
+{% block extra_css %}
+<style>
+    .employee-card {
+        transition: transform 0.2s ease-in-out;
+        border: none;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .employee-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .employee-photo {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border: 3px solid #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .employee-info {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-info a {
+        color: inherit;
+    }
+    
+    .contact-info a:hover {
+        color: var(--bs-primary);
+    }
+    
+    .card-header h5 {
+        margin: 0;
+    }
+    
+    address {
+        font-style: normal;
+    }
+</style>
+{% endblock %}
+{% endblock %}

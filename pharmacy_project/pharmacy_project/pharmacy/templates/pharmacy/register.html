@@ -1,0 +1,147 @@
+{% extends 'pharmacy/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Регистрация</h2>
+                    <form method="post" id="registrationForm" novalidate>
+                        {% csrf_token %}
+                        {% for field in form %}
+                        <div class="mb-3">
+                            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                            {{ field }}
+                            <div class="invalid-feedback" id="{{ field.id_for_label }}-error"></div>
+                            {% if field.errors %}
+                            <div class="alert alert-danger mt-1">
+                                {{ field.errors }}
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p>Уже есть аккаунт? <a href="{% url 'pharmacy:login' %}">Войти</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('registrationForm');
+    const phoneInput = document.querySelector('input[name="phone"]');
+    const passwordInput = document.querySelector('input[name="password"]');
+    const dateInput = document.querySelector('input[name="date_of_birth"]');
+
+    // Маска для телефона
+    function formatPhoneNumber(value) {
+        if (!value) return value;
+        const phoneNumber = value.replace(/[^\d]/g, '');
+        if (phoneNumber.length < 12) return value;
+        return `+375 (${phoneNumber.slice(3, 5)}) ${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8, 10)}-${phoneNumber.slice(10, 12)}`;
+    }
+
+    phoneInput.addEventListener('input', function(e) {
+        let cursorPosition = this.selectionStart;
+        const value = this.value;
+        const formattedValue = formatPhoneNumber(value);
+        
+        if (formattedValue !== value) {
+            this.value = formattedValue;
+            if (cursorPosition < value.length) {
+                this.setSelectionRange(cursorPosition, cursorPosition);
+            }
+        }
+    });
+
+    // Проверка возраста
+    function calculateAge(birthDate) {
+        const today = new Date();
+        const birth = new Date(birthDate);
+        let age = today.getFullYear() - birth.getFullYear();
+        const monthDiff = today.getMonth() - birth.getMonth();
+        
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+            age--;
+        }
+        return age;
+    }
+
+    // Валидация формы
+    form.addEventListener('submit', function(e) {
+        let isValid = true;
+        
+        // Проверка пароля
+        const password = passwordInput.value;
+        if (password.length < 8 || !/[A-Za-z]/.test(password) || !/\d/.test(password)) {
+            isValid = false;
+            showError(passwordInput, 'Пароль должен содержать минимум 8 символов, включая буквы и цифры');
+        }
+
+        // Проверка телефона
+        const phone = phoneInput.value;
+        const phonePattern = /^\+375 \(29\) \d{3}-\d{2}-\d{2}$/;
+        if (!phonePattern.test(phone)) {
+            isValid = false;
+            showError(phoneInput, 'Введите корректный номер телефона в формате +375 (29) XXX-XX-XX');
+        }
+
+        // Проверка возраста
+        const birthDate = dateInput.value;
+        if (birthDate && calculateAge(birthDate) < 18) {
+            isValid = false;
+            showError(dateInput, 'Вы должны быть старше 18 лет для регистрации');
+        }
+
+        if (!isValid) {
+            e.preventDefault();
+        }
+    });
+
+    // Показ ошибок
+    function showError(input, message) {
+        const errorDiv = document.getElementById(`${input.id}-error`);
+        if (errorDiv) {
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            input.classList.add('is-invalid');
+        }
+    }
+
+    // Очистка ошибок при вводе
+    form.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', function() {
+            const errorDiv = document.getElementById(`${this.id}-error`);
+            if (errorDiv) {
+                errorDiv.style.display = 'none';
+                this.classList.remove('is-invalid');
+            }
+        });
+    });
+});
+</script>
+
+<style>
+.invalid-feedback {
+    display: none;
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+}
+.is-invalid {
+    border-color: #dc3545;
+}
+.is-invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+</style>
+{% endblock %} 

@@ -1,0 +1,37 @@
+{% extends "pharmacy/base.html" %}
+
+{% block title %}Препараты{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3">
+        <h3>Категории</h3>
+        <ul class="list-group">
+            <li class="list-group-item {% if not category %}active{% endif %}">
+                <a href="{% url 'pharmacy:product_list' %}" class="text-decoration-none">Все</a>
+            </li>
+            {% for c in categories %}
+            <li class="list-group-item {% if category.slug == c.slug %}active{% endif %}">
+                <a href="{{ c.get_absolute_url }}" class="text-decoration-none">{{ c.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <h1>{% if category %}{{ category.name }}{% else %}Препараты{% endif %}</h1>
+        <div class="row">
+            {% for product in products %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">{{ product.price }} руб.</p>
+                        <a href="{{ product.get_absolute_url }}" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

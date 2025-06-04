@@ -1,0 +1,118 @@
+{% extends "pharmacy/base.html" %}
+{% load static %}
+{% load pharmacy_extras %}
+
+{% block title %}Вакансии{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">Вакансии</h1>
+    
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="row">
+        {% for vacancy in vacancies %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ vacancy.title }}</h5>
+                    <p class="card-text">{{ vacancy.description|linebreaks }}</p>
+                    
+                    <h6>Требования:</h6>
+                    <p class="card-text">{{ vacancy.requirements|linebreaks }}</p>
+                    
+                    {% if vacancy.salary %}
+                    <p class="card-text"><strong>Зарплата:</strong> {{ vacancy.salary }}</p>
+                    {% endif %}
+                    
+                    {% if user.is_authenticated %}
+                        {% if vacancy.id in user_applications %}
+                            <button class="btn btn-success" disabled>
+                                <i class="fas fa-check"></i> Вы уже откликнулись
+                            </button>
+                        {% else %}
+                            <button type="button" 
+                                    class="btn btn-primary" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#applicationModal{{ vacancy.id }}">
+                                <i class="fas fa-paper-plane"></i> Откликнуться
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="applicationModal{{ vacancy.id }}" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Отклик на вакансию: {{ vacancy.title }}</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <form method="post" enctype="multipart/form-data">
+                                            <div class="modal-body">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="vacancy_id" value="{{ vacancy.id }}">
+                                                
+                                                <div class="mb-3">
+                                                    <label class="form-label">Имя</label>
+                                                    {{ form.first_name|addclass:"form-control" }}
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <label class="form-label">Фамилия</label>
+                                                    {{ form.last_name|addclass:"form-control" }}
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <label class="form-label">Email</label>
+                                                    {{ form.email|addclass:"form-control" }}
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <label class="form-label">Телефон</label>
+                                                    {{ form.phone|addclass:"form-control" }}
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <label class="form-label">Резюме</label>
+                                                    {{ form.resume|addclass:"form-control" }}
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <label class="form-label">Сопроводительное письмо</label>
+                                                    {{ form.cover_letter|addclass:"form-control" }}
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                                                <button type="submit" class="btn btn-primary">Отправить</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        <a href="{% url 'pharmacy:login' %}" class="btn btn-primary">
+                            <i class="fas fa-sign-in-alt"></i> Войдите, чтобы откликнуться
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info">
+                В настоящее время нет открытых вакансий.
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

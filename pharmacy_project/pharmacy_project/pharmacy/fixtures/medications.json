@@ -1,0 +1,77 @@
+[
+    {
+        "model": "pharmacy.medication",
+        "pk": 1,
+        "fields": {
+            "barcode": "4600000001",
+            "name": "Парацетамол",
+            "description": "Жаропонижающее и обезболивающее средство",
+            "instruction": "Принимать по 1 таблетке до 4 раз в день",
+            "department": 2,
+            "supplier": 1,
+            "price": "2.50",
+            "stock": 100,
+            "prescription_required": false
+        }
+    },
+    {
+        "model": "pharmacy.medication",
+        "pk": 2,
+        "fields": {
+            "barcode": "4600000002",
+            "name": "Ибупрофен",
+            "description": "Нестероидное противовоспалительное средство",
+            "instruction": "Принимать по 1-2 таблетки 3 раза в день после еды",
+            "department": 2,
+            "supplier": 1,
+            "price": "3.80",
+            "stock": 80,
+            "prescription_required": false
+        }
+    },
+    {
+        "model": "pharmacy.medication",
+        "pk": 3,
+        "fields": {
+            "barcode": "4600000003",
+            "name": "Амоксициллин",
+            "description": "Антибиотик широкого спектра действия",
+            "instruction": "По назначению врача. Принимать строго по рецепту",
+            "department": 1,
+            "supplier": 2,
+            "price": "12.90",
+            "stock": 50,
+            "prescription_required": true
+        }
+    },
+    {
+        "model": "pharmacy.medication",
+        "pk": 4,
+        "fields": {
+            "barcode": "4600000004",
+            "name": "Витамин C",
+            "description": "Аскорбиновая кислота в таблетках",
+            "instruction": "По 1 таблетке 1-2 раза в день",
+            "department": 2,
+            "supplier": 3,
+            "price": "5.60",
+            "stock": 150,
+            "prescription_required": false
+        }
+    },
+    {
+        "model": "pharmacy.medication",
+        "pk": 5,
+        "fields": {
+            "barcode": "4600000005",
+            "name": "Омепразол",
+            "description": "Противоязвенное средство",
+            "instruction": "По 1 капсуле утром до еды",
+            "department": 1,
+            "supplier": 2,
+            "price": "8.40",
+            "stock": 60,
+            "prescription_required": true
+        }
+    }
+] 

@@ -1,0 +1,99 @@
+{% extends "pharmacy/base.html" %}
+{% load pharmacy_extras %}
+
+{% block title %}Профиль сотрудника{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Информация о сотруднике -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">Информация о сотруднике</h5>
+                    <div>
+                        {% if user.is_superuser %}
+                            <a href="{% url 'admin:index' %}" class="btn btn-warning btn-sm me-2">
+                                <i class="fas fa-tools"></i> Админ-панель
+                            </a>
+                        {% endif %}
+                        <a href="{% url 'pharmacy:edit_employee_profile' %}" class="btn btn-light btn-sm">
+                            <i class="fas fa-edit"></i> Изменить
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-3">
+                            {% if user.photo %}
+                                <img src="{{ user.photo.url }}" alt="Фото профиля" class="img-fluid rounded-circle profile-photo mb-3" style="max-width: 200px; height: auto;">
+                            {% else %}
+                                <img src="/static/images/default-avatar.png" alt="Фото профиля по умолчанию" class="img-fluid rounded-circle profile-photo mb-3" style="max-width: 200px; height: auto;">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>ФИО:</strong> {{ user_info.full_name }}</p>
+                                    <p><strong>Email:</strong> {{ user_info.email }}</p>
+                                    <p><strong>Телефон:</strong> {{ user_info.phone }}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Должность:</strong> {{ user_info.position }}</p>
+                                    <p><strong>Отдел:</strong> {{ user_info.department }}</p>
+                                    <p><strong>Дата и время начала работы:</strong> {{ user_info.date_joined|date:"d.m.Y H:i" }} ({{ user_info.date_joined|date:"e" }})</p>
+                                    {% if user_info.last_updated %}
+                                    <p><strong>Последнее обновление:</strong> {{ user_info.last_updated|date:"d.m.Y H:i" }} ({{ user_info.last_updated|date:"e" }})</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Календарь -->
+            <div class="card mt-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">Календарь</h5>
+                </div>
+                <div class="card-body">
+                    <pre class="alert alert-info p-3 mb-0">{{ user.get_text_calendar }}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_css %}
+<style>
+    .card {
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        transition: transform 0.2s;
+        margin-top: 2rem;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .btn-light {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    .btn-light:hover {
+        background-color: #fff;
+    }
+    .profile-photo {
+        border: 3px solid #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    /* Calendar styles */
+    pre {
+        font-family: monospace;
+        white-space: pre;
+        margin: 0;
+        background-color: transparent;
+        border: none;
+    }
+</style>
+{% endblock %}
+{% endblock %}
