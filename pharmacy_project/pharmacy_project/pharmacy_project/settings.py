@@ -107,8 +107,11 @@ INSTALLED_APPS = [
     'pharmacy.apps.PharmacyConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+<<<<<<< HEAD
     'crispy_forms',
     'widget_tweaks',
+=======
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
 ]
 
 MIDDLEWARE = [
@@ -175,6 +178,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
+<<<<<<< HEAD
 LANGUAGE_CODE = 'ru-ru'
 
 
@@ -192,15 +196,35 @@ DATE_FORMAT = 'd.m.Y'
 DATE_INPUT_FORMATS = ['%d.%m.%Y']
 DATETIME_FORMAT = 'd.m.Y H:i:s'
 SHORT_DATE_FORMAT = 'd.m.Y'
+=======
+LANGUAGE_CODE = 'en-us'
+
+
+
+TIME_ZONE = 'UTC'
+
+USE_I18N = True
+
+USE_TZ = True
+
+# Date format settings
+DATE_FORMAT = 'd/m/Y'
+DATE_INPUT_FORMATS = ['%d/%m/%Y']
+DATETIME_FORMAT = 'd/m/Y H:i:s'
+SHORT_DATE_FORMAT = 'd/m/Y'
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+<<<<<<< HEAD
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'pharmacy/static'),
 ]
+=======
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
 
 # Media files (User uploaded files)
 MEDIA_URL = '/media/'
@@ -208,17 +232,26 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = 'pharmacy.CustomUser'
 
+<<<<<<< HEAD
 LOGIN_URL = 'pharmacy:login'
 LOGIN_REDIRECT_URL = 'pharmacy:home'
 LOGOUT_REDIRECT_URL = 'pharmacy:home'
+=======
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/profile/'
+LOGOUT_REDIRECT_URL = '/'
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+=======
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
 # Import local settings
 try:
     from .local_settings import *

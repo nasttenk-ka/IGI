@@ -1,19 +1,62 @@
+<<<<<<< HEAD
 {% load static %}
+=======
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>{% block title %}Фармацевтика{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+=======
+    <title>{% block title %}Аптека "здоровье"{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .navbar { margin-bottom: 20px; }
+        footer { margin-top: 40px; padding: 20px 0; }
+        .card { margin-bottom: 20px; }
+        .user-greeting { color: white; margin-right: 15px; }
+        .admin-button-container { margin: 20px 0; }
+        .weather-widget {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: white;
+            margin-right: 15px;
+        }
+        .weather-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .weather-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .weather-temp {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .weather-desc {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+    </style>
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
+<<<<<<< HEAD
             <a class="navbar-brand" href="{% url 'pharmacy:home' %}">
                 <i class="fas fa-mortar-pestle me-2"></i>
                 Фармацевтика
@@ -29,6 +72,14 @@
                 <div class="time-widget" id="timeWidget">
                     <i class="far fa-clock me-2"></i>
                     <span id="currentTime"></span>
+=======
+            <a class="navbar-brand" href="{% url 'pharmacy:home' %}">Аптека "Здоровье"</a>
+
+            
+            <div class="weather-widget" id="weatherWidget">
+                <div class="spinner-border spinner-border-sm text-light" role="status">
+                    <span class="visually-hidden">Загрузка...</span>
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
                 </div>
             </div>
 
@@ -127,6 +178,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     {% block extra_js %}{% endblock %}
     <script>
+<<<<<<< HEAD
     function updateTime() {
         const now = new Date();
         const options = {
@@ -142,6 +194,8 @@
     // Update time every second
     setInterval(updateTime, 1000);
     updateTime(); // Initial update
+=======
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
     
     async function updateWeather() {
         try {

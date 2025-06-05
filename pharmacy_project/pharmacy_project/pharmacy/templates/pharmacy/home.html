@@ -1,9 +1,13 @@
 {% extends "pharmacy/base.html" %}
+<<<<<<< HEAD
 {% load static %}
+=======
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
 
 {% block title %}Главная - Аптека "Здоровье"{% endblock %}
 
 {% block content %}
+<<<<<<< HEAD
 <div class="container py-4">
     <!-- Поиск -->
     <div class="row mb-4">
@@ -11,10 +15,54 @@
             <form class="d-flex" method="GET" action="{% url 'pharmacy:home' %}">
                 <input class="form-control me-2" type="search" placeholder="Поиск лекарств..." name="search">
                 <button class="btn btn-primary" type="submit">Поиск</button>
+=======
+<div class="container mt-4">
+    <!-- Search and Filter Section -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="get" class="row g-3">
+                <div class="col-md-4">
+                    <label for="search" class="form-label">Поиск</label>
+                    <input type="text" class="form-control" id="search" name="search" value="{{ search_query }}" placeholder="Введите текст для поиска...">
+                </div>
+                <div class="col-md-3">
+                    <label for="search_field" class="form-label">Поиск по</label>
+                    <select class="form-select" id="search_field" name="search_field">
+                        <option value="name" {% if search_field == 'name' %}selected{% endif %}>Названию</option>
+                        <option value="description" {% if search_field == 'description' %}selected{% endif %}>Описанию</option>
+                        <option value="price_min" {% if search_field == 'price_min' %}selected{% endif %}>Цена от</option>
+                        <option value="price_max" {% if search_field == 'price_max' %}selected{% endif %}>Цена до</option>
+                        <option value="department" {% if search_field == 'department' %}selected{% endif %}>Отделу</option>
+                        <option value="supplier" {% if search_field == 'supplier' %}selected{% endif %}>Поставщику</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="sort_by" class="form-label">Сортировать по</label>
+                    <select class="form-select" id="sort_by" name="sort_by">
+                        <option value="name" {% if sort_by == 'name' %}selected{% endif %}>Названию</option>
+                        <option value="price" {% if sort_by == 'price' %}selected{% endif %}>Цене</option>
+                        <option value="stock" {% if sort_by == 'stock' %}selected{% endif %}>Количеству</option>
+                        <option value="department" {% if sort_by == 'department' %}selected{% endif %}>Отделу</option>
+                        <option value="supplier" {% if sort_by == 'supplier' %}selected{% endif %}>Поставщику</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="sort_order" class="form-label">Порядок</label>
+                    <select class="form-select" id="sort_order" name="sort_order">
+                        <option value="asc" {% if sort_order == 'asc' %}selected{% endif %}>По возрастанию</option>
+                        <option value="desc" {% if sort_order == 'desc' %}selected{% endif %}>По убыванию</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Применить</button>
+                    <a href="{% url 'pharmacy:home' %}" class="btn btn-secondary">Сбросить</a>
+                </div>
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
             </form>
         </div>
     </div>
 
+<<<<<<< HEAD
     <!-- Фильтры -->
     <div class="row mb-4">
         <div class="col-md-12">
@@ -187,4 +235,86 @@
     overflow: hidden;
 }
 </style>
+=======
+    <!-- Quick Filters -->
+    <div class="mb-4">
+        <h5>Быстрые фильтры:</h5>
+        <div class="btn-group">
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                Отдел
+            </button>
+            <ul class="dropdown-menu">
+                {% for department in departments %}
+                <li><a class="dropdown-item" href="?search={{ department }}&search_field=department">{{ department }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="btn-group ms-2">
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                Поставщик
+            </button>
+            <ul class="dropdown-menu">
+                {% for supplier in suppliers %}
+                <li><a class="dropdown-item" href="?search={{ supplier }}&search_field=supplier">{{ supplier }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="row">
+        {% if medications %}
+            {% for medication in medications %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    {% if medication.photo %}
+                    <img src="{{ medication.photo.url }}" class="card-img-top" alt="{{ medication.name }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ medication.name }}</h5>
+                        <p class="card-text">{{ medication.description|truncatewords:20 }}</p>
+                        <p class="card-text">
+                            <small class="text-muted">Отдел: {{ medication.department.name }}</small><br>
+                            <small class="text-muted">Поставщик: {{ medication.supplier.name }}</small>
+                        </p>
+                        <p class="card-text">
+                            <strong>Цена: {{ medication.price }} руб.</strong><br>
+                            <span class="{% if medication.stock > 0 %}text-success{% else %}text-danger{% endif %}">
+                                В наличии: {{ medication.stock }} шт.
+                            </span>
+                        </p>
+                        {% if medication.prescription_required %}
+                        <div class="alert alert-warning" role="alert">
+                            Требуется рецепт
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'pharmacy:medication_detail' pk=medication.pk %}" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="col">
+                <div class="alert alert-info" role="alert">
+                    По вашему запросу ничего не найдено.
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Автоматическое обновление формы при изменении сортировки
+    document.getElementById('sort_by').addEventListener('change', function() {
+        this.form.submit();
+    });
+    document.getElementById('sort_order').addEventListener('change', function() {
+        this.form.submit();
+    });
+});
+</script>
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
 {% endblock %}

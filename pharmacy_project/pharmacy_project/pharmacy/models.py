@@ -462,6 +462,7 @@ class VacancyApplication(models.Model):
                 self.email = self.user.email
             if not self.phone:
                 self.phone = self.user.phone
+<<<<<<< HEAD
         super().save(*args, **kwargs)
 
 class Contact(BaseModel):
@@ -478,3 +479,6 @@ class Contact(BaseModel):
         verbose_name = 'Контакт'
         verbose_name_plural = 'Контакты'
         ordering = ['order', 'name']
+=======
+        super().save(*args, **kwargs)
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0

@@ -73,6 +73,7 @@
             "stock": 60,
             "prescription_required": true
         }
+<<<<<<< HEAD
     },
     {
         "model": "pharmacy.medication",
@@ -125,5 +126,7 @@
             "in_stock": true,
             "category": "cosmetics"
         }
+=======
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
     }
 ] 

@@ -1,4 +1,5 @@
 {% extends 'pharmacy/base.html' %}
+<<<<<<< HEAD
 {% load static %}
 
 {% block content %}
@@ -52,4 +53,26 @@ document.getElementById('togglePassword').addEventListener('click', function() {
     }
 });
 </script>
+=======
+
+{% block content %}
+<div class="login-form">
+    <h2>Вход в систему</h2>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Имя пользователя:</label>
+            <input type="text" name="username" id="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <button type="submit">Войти</button>
+    </form>
+</div>
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
 {% endblock %} 

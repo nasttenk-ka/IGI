@@ -1,9 +1,13 @@
 {% extends "pharmacy/base.html" %}
+<<<<<<< HEAD
 {% load static %}
+=======
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
 
 {% block title %}О компании - Аптека "Здоровье"{% endblock %}
 
 {% block content %}
+<<<<<<< HEAD
 <div class="container py-5">
     <div class="row">
         <div class="col-12">
@@ -76,6 +80,43 @@
                         </div>
                     </div>
                 </div>
+=======
+<div class="row">
+    <div class="col-md-8">
+        {% if company_info %}
+        <h2>{{ company_info.title }}</h2>
+        <div class="mb-4">{{ company_info.content|linebreaks }}</div>
+        {% endif %}
+
+        <h3>Наша история</h3>
+        <div class="list-group mb-4">
+            {% for item in history %}
+            <div class="list-group-item">
+                <h5>{{ item.year }} год</h5>
+                <p>{{ item.event }}</p>
+                <small>{{ item.description }}</small>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        {% if company_info and company_info.logo %}
+        <div class="card mb-4">
+            <img src="{{ company_info.logo.url }}" class="card-img-top" alt="Логотип компании">
+        </div>
+        {% endif %}
+        
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Наши принципы</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Качество продукции</li>
+                    <li class="list-group-item">Профессиональные консультации</li>
+                    <li class="list-group-item">Доступные цены</li>
+                    <li class="list-group-item">Забота о клиентах</li>
+                </ul>
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
             </div>
         </div>
     </div>

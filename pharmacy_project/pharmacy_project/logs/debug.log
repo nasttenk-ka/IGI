@@ -207,3 +207,7 @@ INFO 2025-05-27 15:51:07,520 models 13305 123145352478720 User updated: arina
 INFO 2025-05-27 15:51:07,520 views 13305 123145352478720 User arina logged in successfully
 INFO 2025-05-27 15:52:05,110 models 13305 123145352478720 Updated Supplier with ID: 1
 INFO 2025-05-27 15:52:10,877 models 13305 123145352478720 Updated Supplier with ID: 1
+<<<<<<< HEAD
+=======
+INFO 2025-06-05 01:48:09,953 views 32704 27388 Login attempt from IP: 127.0.0.1
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0

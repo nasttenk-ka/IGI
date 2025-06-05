@@ -18,7 +18,10 @@ import io
 import base64
 from datetime import date
 import numpy as np
+<<<<<<< HEAD
 from django.db.models import Q
+=======
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
 
 # Configure loggers
 logger = logging.getLogger('pharmacy')
@@ -33,6 +36,7 @@ def is_employee(user):
     return user.user_type == 'E'
 
 def home(request):
+<<<<<<< HEAD
     search_query = request.GET.get('search', '')
     category_filter = request.GET.get('category', '')
     
@@ -64,6 +68,66 @@ def home(request):
         'promocodes': promocodes,
         'vacancies': vacancies,
         'contacts': contacts,
+=======
+    medications = Medication.objects.all()
+    
+    # Search functionality
+    search_query = request.GET.get('search', '')
+    search_field = request.GET.get('search_field', 'name')
+    
+    if search_query:
+        if search_field == 'name':
+            medications = medications.filter(name__icontains=search_query)
+        elif search_field == 'description':
+            medications = medications.filter(description__icontains=search_query)
+        elif search_field == 'price_min':
+            try:
+                medications = medications.filter(price__gte=float(search_query))
+            except ValueError:
+                pass
+        elif search_field == 'price_max':
+            try:
+                medications = medications.filter(price__lte=float(search_query))
+            except ValueError:
+                pass
+        elif search_field == 'department':
+            medications = medications.filter(department__name__icontains=search_query)
+        elif search_field == 'supplier':
+            medications = medications.filter(supplier__name__icontains=search_query)
+    
+    # Sorting functionality
+    sort_by = request.GET.get('sort_by', 'name')
+    sort_order = request.GET.get('sort_order', 'asc')
+    
+    if sort_by in ['name', 'price', 'stock']:
+        sort_field = sort_by
+        if sort_order == 'desc':
+            sort_field = f'-{sort_field}'
+        medications = medications.order_by(sort_field)
+    elif sort_by == 'department':
+        sort_field = 'department__name'
+        if sort_order == 'desc':
+            sort_field = f'-{sort_field}'
+        medications = medications.order_by(sort_field)
+    elif sort_by == 'supplier':
+        sort_field = 'supplier__name'
+        if sort_order == 'desc':
+            sort_field = f'-{sort_field}'
+        medications = medications.order_by(sort_field)
+
+    # Get unique departments and suppliers for search filters
+    departments = Department.objects.values_list('name', flat=True).distinct()
+    suppliers = Supplier.objects.values_list('name', flat=True).distinct()
+
+    context = {
+        'medications': medications,
+        'search_query': search_query,
+        'search_field': search_field,
+        'sort_by': sort_by,
+        'sort_order': sort_order,
+        'departments': departments,
+        'suppliers': suppliers,
+>>>>>>> e9e6f87d50eaedc5507a29b33403ea1957a57ca0
     }
     
     return render(request, 'pharmacy/home.html', context)
