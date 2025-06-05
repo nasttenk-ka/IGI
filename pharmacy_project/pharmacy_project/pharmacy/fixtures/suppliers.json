@@ -1,0 +1,47 @@
+[
+    {
+        "model": "pharmacy.supplier",
+        "pk": 1,
+        "fields": {
+            "name": "БелФармация",
+            "contact_person": "Иванов Иван Иванович",
+            "phone": "+375291111111",
+            "email": "belfarm@example.com",
+            "address": "г. Минск, ул. Притыцкого, 45",
+            "delivery_time": 2,
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z",
+            "is_active": true
+        }
+    },
+    {
+        "model": "pharmacy.supplier",
+        "pk": 2,
+        "fields": {
+            "name": "МедФарм",
+            "contact_person": "Петров Петр Петрович",
+            "phone": "+375292222222",
+            "email": "medfarm@example.com",
+            "address": "г. Минск, ул. Кульман, 22",
+            "delivery_time": 3,
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z",
+            "is_active": true
+        }
+    },
+    {
+        "model": "pharmacy.supplier",
+        "pk": 3,
+        "fields": {
+            "name": "ФармЛайн",
+            "contact_person": "Сидоров Сидор Сидорович",
+            "phone": "+375293333333",
+            "email": "pharmline@example.com",
+            "address": "г. Минск, пр. Независимости, 168",
+            "delivery_time": 1,
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z",
+            "is_active": true
+        }
+    }
+] 

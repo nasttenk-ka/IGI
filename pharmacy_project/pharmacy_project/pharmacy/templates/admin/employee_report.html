@@ -1,0 +1,34 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>Отчет по сотруднику: {{ employee.user.get_full_name }}</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <p>Должность: {{ employee.get_position_display }}</p>
+        <p>Отдел: {{ employee.department.name }}</p>
+        <p>Всего продаж: {{ total_sales.count|default:0 }}</p>
+        <p>Общая выручка: {{ total_sales.total_amount|default:0 }} ₽</p>
+    </div>
+</div>
+
+<h2>История продаж</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Дата</th>
+            <th>Сумма</th>
+            <th>Способ оплаты</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sale in sales %}
+        <tr>
+            <td>{{ sale.sale_date|date:"d.m.Y H:i" }}</td>
+            <td>{{ sale.total_amount }} ₽</td>
+            <td>{{ sale.get_payment_method_display }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

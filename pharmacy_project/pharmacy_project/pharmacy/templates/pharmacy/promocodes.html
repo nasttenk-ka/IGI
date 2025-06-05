@@ -1,0 +1,27 @@
+{% extends "pharmacy/base.html" %}
+
+{% block title %}Промокоды - Аптека "Здоровье"{% endblock %}
+
+{% block content %}
+<h2>Актуальные промокоды</h2>
+
+<div class="row mb-4">
+    {% for promo in active_promocodes %}
+    <div class="col-md-6 mb-4">
+        <div class="card border-success h-100">
+            <div class="card-header bg-success text-white">
+                <h5 class="card-title mb-0">{{ promo.code }} - скидка {{ promo.discount }}%</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{ promo.description }}</p>
+                <p class="text-muted">Действует до: {{ promo.valid_to|date:"d.m.Y" }}</p>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-info">В данный момент нет активных промокодов</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

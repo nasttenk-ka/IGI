@@ -1,0 +1,38 @@
+[
+    {
+        "model": "pharmacy.contact",
+        "pk": 1,
+        "fields": {
+            "name": "Добряков Александр Александрович",
+            "position": "Генеральный директор",
+            "email": "director@pharmacy.by",
+            "phone": "+375 (29) 123-45-67",
+            "photo": "employee_photos/director.png",
+            "description": "Основатель и руководитель сети аптек с 30-летним опытом в фармацевтической отрасли. Кандидат фармацевтических наук."
+        }
+    },
+    {
+        "model": "pharmacy.contact",
+        "pk": 2,
+        "fields": {
+            "name": "Пономарёва Майя Александровна",
+            "position": "Коммерческий директор",
+            "email": "commerce@pharmacy.by",
+            "phone": "+375 (29) 234-56-78",
+            "photo": "employee_photos/manager.png",
+            "description": "Отвечает за развитие сети и работу с поставщиками. Опыт в фармацевтическом бизнесе более 10 лет."
+        }
+    },
+    {
+        "model": "pharmacy.contact",
+        "pk": 3,
+        "fields": {
+            "name": "Елена Александровна Соколова",
+            "position": "Главный провизор",
+            "email": "pharmacy@pharmacy.by",
+            "phone": "+375 (29) 345-67-89",
+            "photo": "employee_photos/pharmacist.png",
+            "description": "Консультирует по вопросам применения лекарственных средств. Опыт работы в фармации более 12 лет."
+        }
+    }
+] 

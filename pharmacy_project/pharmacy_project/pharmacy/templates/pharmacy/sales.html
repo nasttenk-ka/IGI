@@ -1,0 +1,174 @@
+{% extends 'pharmacy/base.html' %}
+{% load pharmacy_extras %}
+
+{% block title %}Продажи{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Отчет по продажам</h2>
+    
+    <div class="row">
+        <!-- Общая статистика -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Общая статистика</h5>
+                    <p class="card-text">
+                        <strong>Общая выручка:</strong> {{ total_revenue|floatformat:2 }} руб.<br>
+                        <strong>Количество продаж:</strong> {{ sales|length }}<br>
+                        <strong>Средняя сумма продажи:</strong> {{ stats.mean|floatformat:2 }} руб.<br>
+                        <strong>Медиана продаж:</strong> {{ stats.median|floatformat:2 }} руб.<br>
+                        <strong>Мода продаж:</strong> {{ stats.mode|floatformat:2 }} руб.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Лидеры продаж -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Лидеры продаж</h5>
+                    <div class="mb-4">
+                        <h6 class="text-primary">Самый популярный товар:</h6>
+                        {% if most_popular_item %}
+                            <p>
+                                <strong>{{ most_popular_item.medication__name }}</strong><br>
+                                Продано единиц: {{ most_popular_item.total_quantity }}
+                            </p>
+                        {% else %}
+                            <p>Нет данных о продажах</p>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <h6 class="text-primary">Самый прибыльный товар:</h6>
+                        {% if most_profitable_item %}
+                            <p><strong>{{ most_profitable_item.medication__name }}</strong></p>
+                        {% else %}
+                            <p>Нет данных о продажах</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Графики matplotlib -->
+        <div class="col-md-12 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Визуализация данных</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h6 class="text-primary">Распределение сумм заказов</h6>
+                            <img src="data:image/png;base64,{{ orders_chart }}" class="img-fluid" alt="График распределения сумм заказов">
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <h6 class="text-primary">Распределение возрастов клиентов</h6>
+                            <img src="data:image/png;base64,{{ ages_chart }}" class="img-fluid" alt="График распределения возрастов">
+                        </div>
+                        <div class="col-md-12 mb-4">
+                            <h6 class="text-primary">Топ-5 популярных товаров</h6>
+                            <img src="data:image/png;base64,{{ products_chart }}" class="img-fluid" alt="График топ-5 товаров">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Продажи по месяцам -->
+        <div class="col-md-12 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Продажи по месяцам</h5>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Месяц</th>
+                                    <th>Сумма продаж</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for sale in monthly_sales %}
+                                <tr>
+                                    <td>{{ sale.month|month_name }}</td>
+                                    <td>{{ sale.total|floatformat:2 }} руб.</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Список всех продаж -->
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Список продаж</h5>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Номер заказа</th>
+                            <th>Дата продажи</th>
+                            <th>Сумма</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for sale in sales %}
+                        <tr>
+                            <td>{{ sale.id }}</td>
+                            <td>
+                                {% if sale.order %}
+                                    <a href="{% url 'pharmacy:order_detail' sale.order.id %}">
+                                        Заказ #{{ sale.order.id }}
+                                    </a>
+                                {% else %}
+                                    -
+                                {% endif %}
+                            </td>
+                            <td>{{ sale.sale_date|date:"d.m.Y H:i" }}</td>
+                            <td>{{ sale.total_amount|floatformat:2 }} руб.</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="4" class="text-center">Нет данных о продажах</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_css %}
+<style>
+    .table-responsive {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+    .card {
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    }
+    .card-title {
+        color: #0d6efd;
+        border-bottom: 2px solid #e9ecef;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .text-primary {
+        margin-bottom: 0.5rem;
+    }
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock %}
+{% endblock %} 

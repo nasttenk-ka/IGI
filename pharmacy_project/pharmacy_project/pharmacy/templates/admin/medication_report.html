@@ -1,0 +1,39 @@
+{% extends "pharmacy/base.html" %}
+
+{% block title %}Главная - Аптека "Здоровье"{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h2>Добро пожаловать в аптеку "Здоровье"</h2>
+        <p class="lead">Мы заботимся о вашем здоровье с 1995 года</p>
+        
+        {% if latest_article %}
+        <div class="card">
+            <div class="card-header">
+                Последняя новость
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ latest_article.title }}</h5>
+                <p class="card-text">{{ latest_article.short_content }}</p>
+                <p class="text-muted">Опубликовано: {{ latest_article.published_date|date:"d.m.Y" }}</p>
+                <a href="{% url 'pharmacy:news' %}" class="btn btn-primary">Все новости</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                Акции и скидки
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Специальные предложения</h5>
+                <p class="card-text">В этом месяце скидка 15% на все витамины</p>
+                <a href="{% url 'pharmacy:promocodes' %}" class="btn btn-success">Посмотреть промокоды</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

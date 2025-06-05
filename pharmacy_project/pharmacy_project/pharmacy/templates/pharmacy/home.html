@@ -1,0 +1,190 @@
+{% extends "pharmacy/base.html" %}
+{% load static %}
+
+{% block title %}Главная - Аптека "Здоровье"{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <!-- Поиск -->
+    <div class="row mb-4">
+        <div class="col-md-8 mx-auto">
+            <form class="d-flex" method="GET" action="{% url 'pharmacy:home' %}">
+                <input class="form-control me-2" type="search" placeholder="Поиск лекарств..." name="search">
+                <button class="btn btn-primary" type="submit">Поиск</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Фильтры -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="btn-group">
+                <button type="button" class="btn btn-outline-primary active" data-filter="all">Все</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="vitamins">Витамины</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="antibiotics">Антибиотики</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="painkillers">Обезболивающие</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="cosmetics">Косметика</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Препараты -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for medication in medications %}
+        <div class="col">
+            <div class="card h-100 medication-card">
+                {% if medication.image %}
+                    <img src="{% static medication.image %}" class="card-img-top p-3" alt="{{ medication.name }}">
+                {% else %}
+                    <img src="{% static 'images/default-medication.png' %}" class="card-img-top p-3" alt="{{ medication.name }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ medication.name }}</h5>
+                    <p class="card-text description">{{ medication.description }}</p>
+                    <p class="card-text">
+                        <small class="text-muted">
+                            {% if medication.instruction %}
+                                Инструкция: {{ medication.instruction }}
+                            {% endif %}
+                        </small>
+                    </p>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price">{{ medication.price }} руб.</span>
+                        {% if medication.prescription_required or medication.requires_prescription %}
+                            <span class="badge bg-warning">По рецепту</span>
+                        {% endif %}
+                    </div>
+                    <div class="mt-2">
+                        {% if medication.in_stock or medication.stock > 0 %}
+                            <button class="btn btn-primary w-100">В корзину</button>
+                        {% else %}
+                            <button class="btn btn-secondary w-100" disabled>Нет в наличии</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Промокоды -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2 class="text-center mb-4">Актуальные промокоды</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% for promo in promocodes %}
+                <div class="col">
+                    <div class="card h-100 promo-card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ promo.code }}</h5>
+                            <p class="card-text">{{ promo.description }}</p>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    Действует до {{ promo.valid_until|date:"d.m.Y" }}
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Вакансии -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2 class="text-center mb-4">Открытые вакансии</h2>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                {% for vacancy in vacancies %}
+                <div class="col">
+                    <div class="card h-100 vacancy-card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ vacancy.title }}</h5>
+                            <p class="card-text">{{ vacancy.description }}</p>
+                            <p class="card-text"><strong>Зарплата:</strong> {{ vacancy.salary }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Контакты -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2 class="text-center mb-4">Наши специалисты</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% for contact in contacts %}
+                <div class="col">
+                    <div class="card h-100 contact-card">
+                        {% if contact.photo %}
+                            <img src="{% static contact.photo %}" class="card-img-top p-3" alt="{{ contact.name }}">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ contact.name }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ contact.position }}</h6>
+                            <p class="card-text">{{ contact.description }}</p>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    <i class="fas fa-envelope"></i> {{ contact.email }}<br>
+                                    <i class="fas fa-phone"></i> {{ contact.phone }}
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.medication-card {
+    transition: transform 0.2s;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.medication-card:hover {
+    transform: translateY(-5px);
+}
+
+.medication-card img {
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.promo-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.vacancy-card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card img {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+</style>
+{% endblock %}

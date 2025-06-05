@@ -1,0 +1,237 @@
+{% extends "pharmacy/base.html" %}
+
+{% block title %}Создание заказа{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">Создание заказа</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" id="orderForm">
+                        {% csrf_token %}
+                        
+                        {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {% for error in form.non_field_errors %}
+                            {{ error }}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        <div class="mb-3">
+                            <label class="form-label">Выберите медикаменты:</label>
+                            <div class="medication-list">
+                                {% for medication in form.medications.field.queryset %}
+                                <div class="medication-item mb-2 p-2 border rounded">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <input type="checkbox" name="medications" value="{{ medication.id }}" 
+                                                   id="med_{{ medication.id }}" class="medication-checkbox">
+                                            <label for="med_{{ medication.id }}">{{ medication.name }}</label>
+                                        </div>
+                                        <div class="quantity-control" style="display: none;">
+                                            <button type="button" class="btn btn-sm btn-secondary decrease-quantity">-</button>
+                                            <input type="number" min="1" max="{{ medication.stock }}" value="1" 
+                                                   class="quantity-input form-control form-control-sm d-inline-block" 
+                                                   style="width: 60px;">
+                                            <button type="button" class="btn btn-sm btn-secondary increase-quantity">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="medication-details">
+                                        <small class="text-muted">
+                                            Цена: {{ medication.price }} руб. | В наличии: {{ medication.stock }} шт.
+                                            {% if medication.prescription_required %}
+                                            <span class="text-danger">| Требуется рецепт</span>
+                                            {% endif %}
+                                        </small>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {{ form.quantities }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.pickup_point.id_for_label }}" class="form-label">{{ form.pickup_point.label }}</label>
+                            {{ form.pickup_point }}
+                            {% if form.pickup_point.help_text %}
+                            <div class="form-text">{{ form.pickup_point.help_text }}</div>
+                            {% endif %}
+                            {% if form.pickup_point.errors %}
+                            <div class="alert alert-danger">
+                                {% for error in form.pickup_point.errors %}
+                                {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.promo_code.id_for_label }}" class="form-label">{{ form.promo_code.label }}</label>
+                            {{ form.promo_code }}
+                            {% if form.promo_code.help_text %}
+                            <div class="form-text">{{ form.promo_code.help_text }}</div>
+                            {% endif %}
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Создать заказ</button>
+                        <a href="{% url 'pharmacy:home' %}" class="btn btn-secondary">Отмена</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Информация о заказе</h5>
+                    <div id="orderSummary">
+                        <p>Выбрано товаров: <span id="selectedCount">0</span></p>
+                        <p>Общая сумма: <span id="totalAmount">0</span> руб.</p>
+                    </div>
+                    <hr>
+                    <p class="card-text">
+                        После создания заказа вы сможете:
+                    </p>
+                    <ul>
+                        <li>Отслеживать статус заказа</li>
+                        <li>Получить заказ в выбранном пункте выдачи</li>
+                        <li>Просматривать историю заказов в личном кабинете</li>
+                    </ul>
+                    <p class="card-text">
+                        <small class="text-muted">
+                            Обратите внимание: для получения рецептурных препаратов необходимо предъявить рецепт в пункте выдачи.
+                        </small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const medicationItems = document.querySelectorAll('.medication-item');
+    const quantitiesInput = document.querySelector('input[name="quantities"]');
+    const orderForm = document.getElementById('orderForm');
+    
+    function updateOrderSummary() {
+        let selectedCount = 0;
+        let totalAmount = 0;
+        
+        medicationItems.forEach(item => {
+            const checkbox = item.querySelector('.medication-checkbox');
+            if (checkbox.checked) {
+                const quantity = parseInt(item.querySelector('.quantity-input').value);
+                const price = parseFloat(item.querySelector('.medication-details').textContent.match(/Цена: ([\d.]+)/)[1]);
+                selectedCount += quantity;
+                totalAmount += price * quantity;
+            }
+        });
+        
+        document.getElementById('selectedCount').textContent = selectedCount;
+        document.getElementById('totalAmount').textContent = totalAmount.toFixed(2);
+    }
+    
+    function updateQuantitiesField() {
+        const quantities = [];
+        medicationItems.forEach(item => {
+            const checkbox = item.querySelector('.medication-checkbox');
+            if (checkbox.checked) {
+                const quantity = item.querySelector('.quantity-input').value;
+                quantities.push(quantity);
+            }
+        });
+        quantitiesInput.value = quantities.join(',');
+    }
+    
+    medicationItems.forEach(item => {
+        const checkbox = item.querySelector('.medication-checkbox');
+        const quantityControl = item.querySelector('.quantity-control');
+        const quantityInput = item.querySelector('.quantity-input');
+        const decreaseBtn = item.querySelector('.decrease-quantity');
+        const increaseBtn = item.querySelector('.increase-quantity');
+        
+        checkbox.addEventListener('change', function() {
+            quantityControl.style.display = this.checked ? 'block' : 'none';
+            updateOrderSummary();
+            updateQuantitiesField();
+        });
+        
+        decreaseBtn.addEventListener('click', function() {
+            if (quantityInput.value > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+                updateOrderSummary();
+                updateQuantitiesField();
+            }
+        });
+        
+        increaseBtn.addEventListener('click', function() {
+            if (quantityInput.value < parseInt(quantityInput.max)) {
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+                updateOrderSummary();
+                updateQuantitiesField();
+            }
+        });
+        
+        quantityInput.addEventListener('change', function() {
+            if (this.value < 1) this.value = 1;
+            if (this.value > parseInt(this.max)) this.value = this.max;
+            updateOrderSummary();
+            updateQuantitiesField();
+        });
+    });
+    
+    orderForm.addEventListener('submit', function(e) {
+        const checkedMedications = document.querySelectorAll('.medication-checkbox:checked');
+        if (checkedMedications.length === 0) {
+            e.preventDefault();
+            alert('Пожалуйста, выберите хотя бы один медикамент');
+        }
+    });
+});
+</script>
+
+<style>
+    .medication-list {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    
+    .medication-item {
+        transition: background-color 0.2s;
+    }
+    
+    .medication-item:hover {
+        background-color: #f8f9fa;
+    }
+    
+    .quantity-control {
+        display: none;
+    }
+    
+    .quantity-input {
+        width: 60px !important;
+        text-align: center;
+        margin: 0 5px;
+    }
+    
+    .form-control {
+        margin-bottom: 10px;
+    }
+    
+    form select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .form-text {
+        font-size: 0.875rem;
+        color: #6c757d;
+    }
+</style>
+{% endblock %} 

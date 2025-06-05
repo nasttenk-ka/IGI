@@ -1,0 +1,129 @@
+[
+    {
+        "model": "pharmacy.medication",
+        "pk": 1,
+        "fields": {
+            "barcode": "4600000001",
+            "name": "Парацетамол",
+            "description": "Жаропонижающее и обезболивающее средство",
+            "instruction": "Принимать по 1 таблетке до 4 раз в день",
+            "department": 2,
+            "supplier": 1,
+            "price": "2.50",
+            "stock": 100,
+            "prescription_required": false
+        }
+    },
+    {
+        "model": "pharmacy.medication",
+        "pk": 2,
+        "fields": {
+            "barcode": "4600000002",
+            "name": "Ибупрофен",
+            "description": "Нестероидное противовоспалительное средство",
+            "instruction": "Принимать по 1-2 таблетки 3 раза в день после еды",
+            "department": 2,
+            "supplier": 1,
+            "price": "3.80",
+            "stock": 80,
+            "prescription_required": false
+        }
+    },
+    {
+        "model": "pharmacy.medication",
+        "pk": 3,
+        "fields": {
+            "barcode": "4600000003",
+            "name": "Амоксициллин",
+            "description": "Антибиотик широкого спектра действия",
+            "instruction": "По назначению врача. Принимать строго по рецепту",
+            "department": 1,
+            "supplier": 2,
+            "price": "12.90",
+            "stock": 50,
+            "prescription_required": true
+        }
+    },
+    {
+        "model": "pharmacy.medication",
+        "pk": 4,
+        "fields": {
+            "barcode": "4600000004",
+            "name": "Витамин C",
+            "description": "Аскорбиновая кислота в таблетках",
+            "instruction": "По 1 таблетке 1-2 раза в день",
+            "department": 2,
+            "supplier": 3,
+            "price": "5.60",
+            "stock": 150,
+            "prescription_required": false
+        }
+    },
+    {
+        "model": "pharmacy.medication",
+        "pk": 5,
+        "fields": {
+            "barcode": "4600000005",
+            "name": "Омепразол",
+            "description": "Противоязвенное средство",
+            "instruction": "По 1 капсуле утром до еды",
+            "department": 1,
+            "supplier": 2,
+            "price": "8.40",
+            "stock": 60,
+            "prescription_required": true
+        }
+    },
+    {
+        "model": "pharmacy.medication",
+        "pk": 6,
+        "fields": {
+            "name": "Магне B6",
+            "description": "Пиридоксин (витамин B6) участвует во многих метаболических процессах, в регуляции метаболизма нервной системы. Витамин B6 улучшает всасывание магния из ЖКТ и его проникновение в клетки.",
+            "price": "32.70",
+            "requires_prescription": false,
+            "image": "medications/magne_b6.png",
+            "in_stock": true,
+            "category": "vitamins"
+        }
+    },
+    {
+        "model": "pharmacy.medication",
+        "pk": 7,
+        "fields": {
+            "name": "Адицеф",
+            "description": "Препарат показан для лечения инфекций легкой и средней степени тяжести, вызванных чувствительными микроорганизмами. Взрослым и подросткам от 13 лет и старше. Внебольничная пневмония, вызванная Haemophilus influenza.",
+            "price": "39.75",
+            "requires_prescription": true,
+            "image": "medications/adicef.png",
+            "in_stock": true,
+            "category": "antibiotics"
+        }
+    },
+    {
+        "model": "pharmacy.medication",
+        "pk": 8,
+        "fields": {
+            "name": "D3K2 Гаммиз",
+            "description": "Взрослым и детям старше 4 лет принимать 1 жевательную конфету ежедневно. Продолжительность приёма не более 1-го месяца. Детям одновременно не употреблять продукцию, содержащую витамин D. Перед применением рекомендуется проконсультироваться с врачом.",
+            "price": "49.97",
+            "requires_prescription": false,
+            "image": "medications/d3k2.png",
+            "in_stock": true,
+            "category": "vitamins"
+        }
+    },
+    {
+        "model": "pharmacy.medication",
+        "pk": 9,
+        "fields": {
+            "name": "Bioderma Sensibio Defensive",
+            "description": "Защитная технология направлена на устранение основных причин чувствительной кожи и предотвращает чувствительность, вызванную образом жизни и окружающей средой. Наносить утром и вечером на кожу лица и шеи, предварительно очищенную мицеллярной водой sensibio или гель-муссом sensibio. Мягко помассируйте для правильного впитывания.",
+            "price": "57.17",
+            "requires_prescription": false,
+            "image": "medications/bioderma.png",
+            "in_stock": true,
+            "category": "cosmetics"
+        }
+    }
+] 

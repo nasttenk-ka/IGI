@@ -1,0 +1,38 @@
+[
+    {
+        "model": "pharmacy.promocode",
+        "pk": 1,
+        "fields": {
+            "code": "SPRING2024",
+            "discount": 15,
+            "description": "Весенняя акция! Скидка 15% на все витамины и БАДы",
+            "valid_from": "2024-03-01",
+            "valid_until": "2024-05-31",
+            "is_active": true
+        }
+    },
+    {
+        "model": "pharmacy.promocode",
+        "pk": 2,
+        "fields": {
+            "code": "BEAUTY",
+            "discount": 20,
+            "description": "Скидка 20% на всю косметику Bioderma",
+            "valid_from": "2024-04-01",
+            "valid_until": "2024-06-30",
+            "is_active": true
+        }
+    },
+    {
+        "model": "pharmacy.promocode",
+        "pk": 3,
+        "fields": {
+            "code": "NEWCLIENT",
+            "discount": 10,
+            "description": "Скидка 10% на первый заказ для новых клиентов",
+            "valid_from": "2024-01-01",
+            "valid_until": "2024-12-31",
+            "is_active": true
+        }
+    }
+] 

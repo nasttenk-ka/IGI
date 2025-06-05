@@ -1,0 +1,109 @@
+{% extends 'pharmacy/base.html' %}
+{% load static %}
+{% load pharmacy_extras %}
+
+{% block title %}Детали заказа{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    {% if messages %}
+    <div class="messages mb-4">
+        {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="mb-0">Детали заказа #{{ order.id }}</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="card-title">Информация о заказе</h5>
+                    <p>
+                        <strong>Дата заказа (местное время):</strong><br>
+                        {% format_datetime_timezone order.order_date "Europe/Minsk" %}
+                    </p>
+                    <p>
+                        <strong>Дата заказа (UTC):</strong><br>
+                        {% format_datetime_timezone order.order_date "UTC" %}
+                    </p>
+                    <p><strong>Статус:</strong> {{ order.get_status_display }}</p>
+                    <p><strong>Пункт выдачи:</strong> {{ order.pickup_point }}</p>
+                    <p><strong>Общая сумма:</strong> {{ order.total_price }} руб.</p>
+                    <p>
+                        <strong>Статус оплаты:</strong>
+                        {% if order.paid %}
+                            <span class="badge bg-success">Оплачен</span>
+                        {% else %}
+                            <span class="badge bg-warning">Не оплачен</span>
+                        {% endif %}
+                    </p>
+                    
+                    {% if order.promo_code %}
+                    <p><strong>Использованный промокод:</strong> {{ order.promo_code.code }}</p>
+                    {% endif %}
+
+                    {% if not order.paid %}
+                    <form method="post" class="mt-4">
+                        {% csrf_token %}
+                        <button type="submit" name="pay_order" class="btn btn-primary">
+                            <i class="fas fa-credit-card me-2"></i>Оплатить заказ
+                        </button>
+                    </form>
+                    {% endif %}
+                </div>
+                
+                <div class="col-md-6">
+                    <h5 class="card-title">Товары в заказе</h5>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Наименование</th>
+                                    <th>Количество</th>
+                                    <th>Цена за ед.</th>
+                                    <th>Сумма</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in order.orderitem_set.all %}
+                                <tr>
+                                    <td>{{ item.medication.name }}</td>
+                                    <td>{{ item.quantity }}</td>
+                                    <td>{{ item.price }} руб.</td>
+                                    <td>{{ item.price|multiply:item.quantity }} руб.</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="{% url 'pharmacy:profile' %}" class="btn btn-secondary">
+            <i class="fas fa-arrow-left me-2"></i>Вернуться к профилю
+        </a>
+    </div>
+</div>
+
+{% block extra_css %}
+<style>
+    .badge {
+        font-size: 1em;
+        padding: 0.5em 1em;
+    }
+    .table-responsive {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+</style>
+{% endblock %}
+{% endblock %} 

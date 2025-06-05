@@ -1,0 +1,49 @@
+{% extends "pharmacy/base.html" %}
+
+{% block title %}{{ medication.name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            {% if medication.photo %}
+            <img src="{{ medication.photo.url }}" class="img-fluid rounded" alt="{{ medication.name }}">
+            {% endif %}
+        </div>
+        <div class="col-md-8">
+            <h1 class="mb-4">{{ medication.name }}</h1>
+            <p class="lead">{{ medication.description }}</p>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Информация о препарате</h5>
+                    <p><strong>Цена:</strong> {{ medication.price }} руб.</p>
+                    <p><strong>Отдел:</strong> {{ medication.department.name }}</p>
+                    <p><strong>Поставщик:</strong> {{ medication.supplier.name }}</p>
+                    <p><strong>Наличие:</strong> 
+                        {% if medication.stock > 0 %}
+                            <span class="text-success">В наличии ({{ medication.stock }} шт.)</span>
+                        {% else %}
+                            <span class="text-danger">Нет в наличии</span>
+                        {% endif %}
+                    </p>
+                    <p><strong>Требуется рецепт:</strong> 
+                        {% if medication.prescription_required %}
+                            <span class="text-danger">Да</span>
+                        {% else %}
+                            <span class="text-success">Нет</span>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Инструкция по применению</h5>
+                    <p class="card-text">{{ medication.instruction|linebreaks }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

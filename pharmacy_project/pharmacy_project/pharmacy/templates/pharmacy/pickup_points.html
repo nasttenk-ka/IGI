@@ -1,0 +1,56 @@
+{% extends "pharmacy/base.html" %}
+
+{% block title %}Пункты выдачи{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Пункты выдачи</h1>
+    
+    <div class="row">
+        {% for point in pickup_points %}
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ point.name }}</h5>
+                    <p class="card-text">
+                        <strong>Адрес:</strong> {{ point.address }}<br>
+                        <strong>Телефон:</strong> {{ point.phone }}<br>
+                        <strong>Режим работы:</strong> {{ point.working_hours }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info">
+                Пункты выдачи пока не добавлены
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .card {
+        transition: transform 0.2s;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .card-text p {
+        margin-bottom: 1rem;
+    }
+    
+    .card-text i {
+        width: 20px;
+        color: #6c757d;
+    }
+    
+    .btn-primary {
+        width: 100%;
+    }
+</style>
+{% endblock %} 
